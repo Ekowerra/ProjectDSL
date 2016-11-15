@@ -1,0 +1,33 @@
+String URL1 = "https://campusneo.mines-nantes.fr/campus"
+String URL2 = "https://campusneo.mines-nantes.fr/campus"
+String URL3 = "http://google.fr"
+String username = "couin14"
+String password = "12345678"
+String aRechercher = "Charly Ouin"
+
+String nav = "navigator"
+
+
+
+
+with nav
+	goto URL1
+
+	if(search("log in", any))
+
+		click("logo", image)
+		filltext("username", username)
+		filltext("password", password)
+		click("connexion",link)
+
+	proc1() 
+
+
+
+
+Proc proc1 :
+	goto URL2
+	var verify = search(aRechercher, any)
+	return verify
+	;
+	;

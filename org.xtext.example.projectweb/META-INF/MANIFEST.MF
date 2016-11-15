@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.example.projectweb
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.example.projectweb; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.example.projectweb.services,
+ org.xtext.example.projectweb.scoping,
+ org.xtext.example.projectweb.generator,
+ org.xtext.example.projectweb.parser.antlr,
+ org.xtext.example.projectweb.parser.antlr.internal,
+ org.xtext.example.projectweb,
+ org.xtext.example.projectweb.projectWeb.impl,
+ org.xtext.example.projectweb.projectWeb.util,
+ org.xtext.example.projectweb.validation,
+ org.xtext.example.projectweb.projectWeb,
+ org.xtext.example.projectweb.serializer
+Import-Package: org.apache.log4j

@@ -1,0 +1,50 @@
+grammar org.xtext.example.projectweb.ProjectWeb with org.eclipse.xtext.common.Terminals
+
+generate projectWeb "http://www.xtext.org/example/projectweb/ProjectWeb"
+
+programWeb:
+	declarations += Declaration*
+	nav = WithNav
+	goto = Goto
+	(if = If)*
+	(fonction = Fonction)*
+	(proc = Proc)*
+	";";
+	
+Declaration:
+	ID Variable ('=' Content)? 
+;
+
+Fonction:
+	ID "(" (STRING | ID) ("," Variable)* ")" | ID "()"
+;
+
+Content:
+	STRING | Fonction
+;
+	
+Variable :
+	ID
+;
+
+If:
+	"if(" Fonction ")" "do" Fonction* Proc* "end"
+;
+
+Proc :
+	"Proc" ID ":"
+		(Goto)?
+		(Fonction)*
+		(Declaration)*
+		(Proc)*
+		"return" Variable ";"
+;
+
+WithNav :
+	"with"ID
+;
+
+Goto :
+	"goto"ID
+;
+	
